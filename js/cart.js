@@ -1,18 +1,18 @@
 /**
- * Aurelia Café — Client-Side Shopping Cart & WhatsApp Ordering
+ * Demo Café — Client-Side Shopping Cart & WhatsApp Ordering
  * 
  * Manages cart state in localStorage, renders slideout cart drawer,
  * computes subtotals and taxes, and formats click-to-chat WhatsApp orders.
  */
 
 const AureliaCart = (() => {
-  const STORAGE_KEY = "aurelia_cart";
-  const CUSTOMER_KEY = "aurelia_customer_draft";
+  const STORAGE_KEY = "demo_cafe_cart";
+  const CUSTOMER_KEY = "demo_customer_draft";
 
   // Helper to retrieve cart items from localStorage
   const getCart = () => {
     try {
-      const stored = localStorage.getItem(STORAGE_KEY);
+      const stored = localStorage.getItem(STORAGE_KEY) || localStorage.getItem("aurelia_cart");
       return stored ? JSON.parse(stored) : [];
     } catch (e) {
       console.warn("Could not read cart from localStorage:", e);
@@ -266,7 +266,7 @@ const AureliaCart = (() => {
     const waNumber = (typeof CAFE_CONFIG !== "undefined") ? CAFE_CONFIG.whatsappNumber : "918779747746";
 
     // Format the WhatsApp message cleanly with emojis and bold text
-    let message = `☕ *NEW ORDER — AURELIA CAFÉ*\n`;
+    let message = `☕ *NEW ORDER — DEMO CAFÉ*\n`;
     message += `--------------------------------------\n`;
     message += `👤 *Customer:* ${customerName}\n`;
     message += `📞 *Phone:* ${customerPhone}\n`;
@@ -298,7 +298,7 @@ const AureliaCart = (() => {
 
     // Close cart drawer & show friendly status
     closeDrawer();
-    alert(`Your order draft has been opened in WhatsApp!\n\nPlease press "Send" in WhatsApp to submit your order to Aurelia Café.\n\nNote: Orders are pending until confirmed by our barista team.`);
+    alert(`Your order draft has been opened in WhatsApp!\n\nPlease press "Send" in WhatsApp to submit your order to Demo Café.\n\nNote: Orders are pending until confirmed by our barista team.`);
   };
 
   // Initialize on page load
@@ -333,6 +333,12 @@ const AureliaCart = (() => {
     checkoutViaWhatsApp
   };
 })();
+
+const DemoCart = AureliaCart;
+if (typeof window !== "undefined") {
+  window.DemoCart = AureliaCart;
+  window.AureliaCart = AureliaCart;
+}
 
 // Auto-initialize when DOM is ready
 document.addEventListener("DOMContentLoaded", AureliaCart.init);

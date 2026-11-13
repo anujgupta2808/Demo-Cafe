@@ -1,5 +1,5 @@
 /**
- * Aurelia Café — Core Website Scripts
+ * Demo Café — Core Website Scripts
  * 
  * Handles navigation, mobile menu, hero carousel slider,
  * testimonials carousel, lightbox, and dynamic config population.
@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const heroSlides = [
     {
       title: "Good Coffee.<br><span class=\"title-accent\">Beautiful Moments.</span>",
-      desc: "Experience the perfect blend of premium coffee, delicious treats and cozy ambiance at Aurelia Café.",
+      desc: "Experience the perfect blend of premium coffee, delicious treats and cozy ambiance at Demo Café.",
       image: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=80"
     },
     {
@@ -188,7 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
       avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
     },
     {
-      quote: "“Warm, luxurious, and impeccably brewed. Aurelia is our weekend family ritual.”",
+      quote: "“Warm, luxurious, and impeccably brewed. Demo Café is our weekend family ritual.”",
       author: "Priya Sengupta",
       avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80"
     }
@@ -233,7 +233,7 @@ document.addEventListener("DOMContentLoaded", () => {
       activeLightboxIndex = index;
       const targetItem = galleryItems[index];
       const img = targetItem.querySelector("img");
-      const caption = targetItem.dataset.caption || (img ? img.alt : "Aurelia Café");
+      const caption = targetItem.dataset.caption || (img ? img.alt : "Demo Café");
 
       if (lightboxImg && img) lightboxImg.src = img.src;
       if (lightboxCaption) lightboxCaption.textContent = caption;

@@ -1,14 +1,14 @@
 /**
- * Aurelia Café - Master Configuration File
+ * Demo Café - Master Configuration File
  * 
  * Update your café details, contact information, hours, and WhatsApp ordering settings
  * in this file. Changes here take effect immediately across all pages.
  */
 const CAFE_CONFIG = {
   // Brand Information
-  name: "Aurelia Café",
+  name: "Demo Café",
   tagline: "Good Coffee. Beautiful Moments.",
-  description: "Experience the perfect blend of premium coffee, delicious treats and cozy ambiance at Aurelia Café.",
+  description: "Experience the perfect blend of premium coffee, delicious treats and cozy ambiance at Demo Café.",
   foundedYear: 2021,
 
   // WhatsApp Click-to-Chat Ordering & Reservations
@@ -19,7 +19,7 @@ const CAFE_CONFIG = {
   // Direct Phone & Email
   phone: "+91 87797 47746",
   phoneCallUrl: "tel:+918779747746",
-  email: "hello@aureliacafe.com",
+  email: "hello@democafe.com",
 
   // Physical Location & Navigation
   address: {
@@ -63,9 +63,9 @@ const CAFE_CONFIG = {
 
   // Social Links
   social: {
-    instagram: "https://instagram.com/aureliacafe",
-    facebook: "https://facebook.com/aureliacafe",
-    youtube: "https://youtube.com/aureliacafe",
+    instagram: "https://instagram.com/democafe",
+    facebook: "https://facebook.com/democafe",
+    youtube: "https://youtube.com/democafe",
     tripadvisor: "https://tripadvisor.com"
   },
 

@@ -1,5 +1,5 @@
 /**
- * Aurelia Café — Interactive Digital Menu
+ * Demo Café — Interactive Digital Menu
  * 
  * Powers category filtering, search, sorting, product details modal,
  * and seamless integration with the shopping cart.
@@ -283,6 +283,12 @@ const AureliaMenu = (() => {
     resetFilters
   };
 })();
+
+const DemoMenu = AureliaMenu;
+if (typeof window !== "undefined") {
+  window.DemoMenu = AureliaMenu;
+  window.AureliaMenu = AureliaMenu;
+}
 
 document.addEventListener("DOMContentLoaded", AureliaMenu.init);
 

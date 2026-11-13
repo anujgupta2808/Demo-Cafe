@@ -1,4 +1,4 @@
-# Netlify Deployment Configuration for Aurelia Café
+# Netlify Deployment Configuration for Demo Café
 # Pure Static Client-Side Architecture (No Database / No Server Functions)
 
 [build]

@@ -1,7 +1,7 @@
-# Aurelia Café — Luxury Coffee House Website
+# Demo Café — Luxury Coffee House Website
 ### Responsive Website Without Database (Client-Side Architecture)
 
-A modern, luxury, fully responsive website for **Aurelia Café**, built with HTML5, CSS3, Vanilla JavaScript, WhatsApp Click-to-Chat ordering, Table Reservations, and Google Maps integration.
+A modern, luxury, fully responsive website for **Demo Café**, built with HTML5, CSS3, Vanilla JavaScript, WhatsApp Click-to-Chat ordering, Table Reservations, and Google Maps integration.
 
 Designed to match the aesthetic of an editorial, high-end European coffee house — with warm espresso tones, champagne gold metallic accents, silky microfoam typography, and zero server or database maintenance.
 
@@ -26,7 +26,7 @@ Designed to match the aesthetic of an editorial, high-end European coffee house 
 ## 📁 Project Structure
 
 ```
-aurelia-cafe/
+demo-cafe/
 │
 ├── index.html            # Flagship Homepage (Hero Carousel, Bestsellers, Quick Reserve, Testimonials)
 ├── about.html            # Story, Roasting Philosophy, Master Baristas, 4 Core Pillars
@@ -99,7 +99,7 @@ Open `js/menu-data.js` to manage your menu:
 3. Customer opens the cart drawer, provides their Name, WhatsApp phone number, and selects order type (*Dine-in*, *Takeaway*, or *Delivery*).
 4. Clicking **"Order via WhatsApp"** opens WhatsApp Click-to-Chat pre-filled with an organized order summary:
    ```
-   ☕ *NEW ORDER — AURELIA CAFÉ*
+   ☕ *NEW ORDER — DEMO CAFÉ*
    --------------------------------------
    👤 *Customer:* Rahul Sharma
    📞 *Phone:* +91 98765 00000
@@ -135,19 +135,19 @@ This website is pre-configured for instant zero-configuration deployment to [Net
 ### Method 1: Git-Based Automated Deployment (Recommended)
 1. **Create a GitHub Repository:**
    - Log in to your GitHub account and click **New Repository**.
-   - Name it `aurelia-cafe` and keep it Public or Private.
+   - Name it `demo-cafe` and keep it Public or Private.
 2. **Push Your Files to GitHub:**
    ```bash
    git init
    git add .
-   git commit -m "Initial commit: Aurelia Cafe luxury static website"
+   git commit -m "Initial commit: Demo Cafe luxury static website"
    git branch -M main
-   git remote add origin https://github.com/<your-username>/aurelia-cafe.git
+   git remote add origin https://github.com/<your-username>/demo-cafe.git
    git push -u origin main
    ```
 3. **Connect to Netlify:**
    - Go to [Netlify App](https://app.netlify.com/) and click **Add new site** > **Import an existing project**.
-   - Select **GitHub** and choose your `aurelia-cafe` repository.
+   - Select **GitHub** and choose your `demo-cafe` repository.
 4. **Deploy Settings:**
    - Base directory: *(leave empty)*
    - Build command: *(leave empty — no build step required!)*
@@ -157,12 +157,12 @@ This website is pre-configured for instant zero-configuration deployment to [Net
 
 ### Method 2: Manual Drag-and-Drop Deploy
 1. Go to [Netlify Drop](https://app.netlify.com/drop).
-2. Drag and drop the `demo` (or `aurelia-cafe`) folder directly into your browser window.
+2. Drag and drop the `demo-cafe` folder directly into your browser window.
 3. Netlify will immediately publish your website and provide a free `https://<site-name>.netlify.app` URL.
 
 ### Connecting a Custom Domain:
 1. In your Netlify dashboard, navigate to **Site configuration** > **Domain management**.
-2. Click **Add a domain** and enter your domain name (e.g., `aureliacafe.com`).
+2. Click **Add a domain** and enter your domain name (e.g., `democafe.com`).
 3. Add the Netlify DNS records (or CNAME/ALIAS) to your domain registrar (GoDaddy, Namecheap, Google Domains).
 4. Netlify will automatically generate and renew a free Let's Encrypt SSL/TLS Certificate.
 
@@ -189,8 +189,8 @@ The website layout has been rigorously designed with CSS Grid, Flexbox, `clamp()
 ---
 
 ## 📄 License & Credits
-- Design System: Aurelia Café Luxury Editorial
+- Design System: Demo Café Luxury Editorial
 - Imagery: High-resolution curated cafe & coffee assets via Unsplash CDN
 - Fonts: Playfair Display & DM Sans (Google Fonts)
-- © 2026 Aurelia Café. Crafted with ♥ for coffee lovers.
+- © 2026 Demo Café. Crafted with ♥ for coffee lovers.
 

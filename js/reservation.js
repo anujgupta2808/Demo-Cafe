@@ -1,5 +1,5 @@
 /**
- * Aurelia Café — Table Reservation Module
+ * Demo Café — Table Reservation Module
  * 
  * Handles reservation form validation, past-date prevention,
  * and formats Click-to-Chat WhatsApp reservation requests.
@@ -67,7 +67,7 @@ const AureliaReservation = (() => {
     }
 
     // Format WhatsApp message
-    let msg = `📅 *TABLE RESERVATION REQUEST — AURELIA CAFÉ*\n`;
+    let msg = `📅 *TABLE RESERVATION REQUEST — DEMO CAFÉ*\n`;
     msg += `--------------------------------------\n`;
     msg += `👤 *Guest Name:* ${formData.name.trim()}\n`;
     if (formData.phone && formData.phone.trim().length > 0) {
@@ -88,7 +88,7 @@ const AureliaReservation = (() => {
       msg += `✨ *Special Request:* ${formData.requests.trim()}\n`;
     }
     msg += `--------------------------------------\n`;
-    msg += `_I understand this booking is pending until Aurelia Café staff confirms table availability._`;
+    msg += `_I understand this booking is pending until Demo Café staff confirms table availability._`;
 
     const encoded = encodeURIComponent(msg);
     const whatsappUrl = `https://wa.me/${waNumber}?text=${encoded}`;
@@ -173,5 +173,11 @@ const AureliaReservation = (() => {
     submitReservation
   };
 })();
+
+const DemoReservation = AureliaReservation;
+if (typeof window !== "undefined") {
+  window.DemoReservation = AureliaReservation;
+  window.AureliaReservation = AureliaReservation;
+}
 
 document.addEventListener("DOMContentLoaded", AureliaReservation.init);

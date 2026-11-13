@@ -17,7 +17,7 @@
   </g>
   
   <!-- Brand Typography -->
-  <text x="75" y="42" font-family="'Playfair Display', Georgia, serif" font-size="34" font-weight="700" fill="#21150F" letter-spacing="0.5">Aurelia</text>
+  <text x="75" y="42" font-family="'Playfair Display', Georgia, serif" font-size="34" font-weight="700" fill="#21150F" letter-spacing="0.5">Demo</text>
   <text x="77" y="58" font-family="'DM Sans', 'Segoe UI', sans-serif" font-size="12" font-weight="600" fill="#C29A66" letter-spacing="4.5">CAFÉ</text>
 </svg>
 

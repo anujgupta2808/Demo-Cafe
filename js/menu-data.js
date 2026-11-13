@@ -1,5 +1,5 @@
 /**
- * Aurelia Café - Digital Menu Database
+ * Demo Café - Digital Menu Database
  * 
  * Edit this file to add, modify, or update products, prices, images, descriptions,
  * or availability. The website will automatically update without any database!
