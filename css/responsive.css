@@ -1,0 +1,1156 @@
+/* ==========================================================================
+   AURELIA CAFÉ — COMPREHENSIVE MULTI-DEVICE RESPONSIVE STYLESHEET
+   Engineered for Perfect Widths across ALL Viewports & Screen Orientations
+   Zero Horizontal Overflow Guaranteed (280px -> 4K Ultrawide)
+   ========================================================================== */
+
+/* --- 1. Global Viewport, Width & Transparent Scrollbar Reset --- */
+html, body {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+/* Hide scrollbars across all devices while maintaining full scroll capability */
+* {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+*::-webkit-scrollbar,
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+  background: transparent !important;
+}
+
+*::-webkit-scrollbar-track,
+*::-webkit-scrollbar-thumb {
+  background: transparent !important;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+img, svg, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent iOS Safari Automatic Zoom on Inputs */
+@media (max-width: 768px) {
+  input, select, textarea, .quick-input, .cart-input, .form-control {
+    font-size: 16px !important;
+  }
+}
+
+/* Touch momentum scrolling */
+.cart-items-container,
+.main-nav,
+.category-filter-nav,
+.featured-products-grid {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Mobile Navigation Backdrop Overlay */
+.mobile-nav-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background-color: rgba(17, 11, 8, 0.75);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 1002;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-normal);
+  pointer-events: none;
+}
+
+.mobile-nav-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Mobile Nav Drawer Actions & Hours */
+.mobile-nav-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(194, 154, 102, 0.2);
+}
+
+.mobile-nav-hours {
+  margin-top: 1rem;
+  font-size: 0.825rem;
+  color: var(--color-beige);
+}
+
+/* ==========================================================================
+   2. ULTRAWIDE & 4K MONITORS (1440px and above)
+   ========================================================================== */
+@media (min-width: 1440px) {
+  :root {
+    --container-max: 1380px;
+  }
+  
+  .hero-title {
+    font-size: clamp(3.5rem, 4.8vw, 4.5rem);
+  }
+
+  .hero-image {
+    height: 500px;
+  }
+  
+  .featured-products-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  .featured-layout {
+    grid-template-columns: 1fr 340px;
+  }
+
+  .menu-items-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1920px) {
+  :root {
+    --container-max: 1480px;
+  }
+
+  .hero-title {
+    font-size: 4.85rem;
+  }
+
+  .hero-image {
+    height: 540px;
+  }
+}
+
+/* ==========================================================================
+   3. STANDARD DESKTOPS & LAPTOPS (1101px – 1439px)
+   ========================================================================== */
+@media (max-width: 1439px) and (min-width: 1101px) {
+  .featured-products-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.85rem;
+    align-items: start;
+  }
+  
+  .featured-layout {
+    grid-template-columns: 1fr minmax(260px, 300px);
+    gap: 1.25rem;
+    align-items: start;
+  }
+
+  .hero-image {
+    height: 440px;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+  }
+
+  .product-card-name {
+    font-size: 0.95rem;
+  }
+
+  .btn-card-add {
+    font-size: 0.8rem;
+    padding: 0.45rem 0.5rem;
+  }
+}
+
+/* ==========================================================================
+   4. LAPTOPS & TABLETS LANDSCAPE (901px – 1100px)
+   ========================================================================== */
+@media (max-width: 1100px) and (min-width: 901px) {
+  .main-nav {
+    gap: 1.25rem;
+  }
+
+  .nav-link {
+    font-size: 0.875rem;
+  }
+
+  .brand-logo img {
+    height: 42px;
+  }
+
+  .btn-order-header {
+    padding: 0.55rem 1.1rem;
+    font-size: 0.85rem;
+  }
+
+  .hero-container {
+    gap: 2rem;
+  }
+
+  .hero-title {
+    font-size: 2.85rem;
+  }
+
+  .hero-image {
+    height: 380px;
+  }
+
+  .featured-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .special-offer-card {
+    width: 100%;
+    max-width: 580px;
+    margin: 1.5rem auto 0;
+    grid-template-columns: 1.2fr 0.8fr;
+    padding: 1.5rem 1.25rem;
+    gap: 1.25rem;
+    align-items: center;
+  }
+
+  .special-offer-card .offer-image-box {
+    min-height: 160px;
+    height: 160px;
+    margin-bottom: 0;
+    width: 100%;
+  }
+
+  .special-offer-card .offer-image-box img {
+    height: 100%;
+  }
+
+  .featured-products-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.85rem;
+    align-items: start;
+  }
+
+  .highlights-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .menu-items-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .footer-grid {
+    grid-template-columns: 1.8fr 1fr 1.2fr 1.4fr 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* ==========================================================================
+   5. TABLETS PORTRAIT & LANDSCAPE (681px – 900px)
+   Matches the Tablet Mockup in the Reference Design
+   ========================================================================== */
+@media (max-width: 900px) {
+  :root {
+    --nav-height: 74px;
+  }
+
+  /* Hamburger Navigation for Tablets */
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 320px;
+    max-width: 85vw;
+    height: 100vh;
+    height: 100dvh;
+    background: linear-gradient(180deg, #21150F 0%, #160D08 100%);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: calc(var(--nav-height) + 1.25rem) 1.75rem 2rem;
+    gap: 1.15rem;
+    border-right: 1px solid rgba(194, 154, 102, 0.25);
+    box-shadow: 10px 0 40px rgba(0, 0, 0, 0.55);
+    transform: translateX(-100%);
+    transition: transform var(--transition-normal);
+    overflow-y: auto;
+    z-index: 1005;
+  }
+
+  .main-nav.active {
+    transform: translateX(0);
+  }
+
+  .nav-link {
+    font-size: 1.2rem;
+    font-family: var(--font-heading);
+    width: 100%;
+    border-bottom: 1px solid rgba(246, 240, 231, 0.08);
+    padding-bottom: 0.6rem;
+  }
+
+  .nav-link.active::after {
+    display: none;
+  }
+
+  /* Tablet Hero Section */
+  .hero-section {
+    padding-top: calc(var(--nav-height) + 1.75rem);
+    padding-bottom: 3.5rem;
+    min-height: auto;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2.25rem;
+    width: 100%;
+  }
+
+  .hero-title {
+    font-size: clamp(2.4rem, 5vw, 3.2rem);
+  }
+
+  .hero-description {
+    margin: 0 auto 1.75rem;
+    max-width: 560px;
+    width: 100%;
+  }
+
+  .hero-actions {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .hero-pagination {
+    justify-content: center;
+  }
+
+  .hero-image-wrapper {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .hero-image {
+    height: 360px;
+  }
+
+  /* Tablet Feature Badges Strip (4 Compact Columns) */
+  .features-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .feature-item {
+    padding: 1rem 0.5rem;
+    gap: 0.4rem;
+  }
+
+  .feature-icon-wrapper {
+    width: 34px;
+    height: 34px;
+    font-size: 1.05rem;
+  }
+
+  .feature-text {
+    font-size: 0.85rem;
+  }
+
+  /* Tablet Featured Favorites */
+  .featured-layout {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .featured-products-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    width: 100%;
+    align-items: start;
+  }
+
+  .special-offer-card {
+    width: 100%;
+    max-width: 500px;
+    margin: 1.75rem auto 0;
+    grid-template-columns: 1.2fr 0.8fr;
+    padding: 1.5rem 1.25rem;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .special-offer-card .offer-image-box {
+    min-height: 150px;
+    height: 150px;
+    margin-bottom: 0;
+    width: 100%;
+  }
+
+  /* Tablet Tri-Cards Row */
+  .highlights-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+    width: 100%;
+  }
+
+  .highlights-grid .highlight-card:last-child {
+    grid-column: span 2;
+  }
+
+  /* Tablet Menu Page */
+  .menu-items-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  /* Tablet Gallery */
+  .gallery-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  /* Tablet Lightbox Buttons inside viewport */
+  .lightbox-btn-prev { left: 10px; }
+  .lightbox-btn-next { right: 10px; }
+
+  /* Tablet Contact & Reservations */
+  .reservation-grid,
+  .contact-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    width: 100%;
+  }
+
+  .contact-cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.15rem;
+  }
+
+  .map-container {
+    min-height: 340px;
+    width: 100%;
+  }
+
+  /* Tablet About Page */
+  .story-split-grid {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .story-badge-floating {
+    right: 15px;
+    bottom: 15px;
+  }
+
+  /* Tablet Footer */
+  .footer-grid {
+    grid-template-columns: 1.5fr 1fr 1.2fr;
+    gap: 1.75rem;
+    width: 100%;
+  }
+
+  .footer-social-col {
+    grid-column: span 3;
+    margin-top: 0.5rem;
+  }
+}
+
+/* ==========================================================================
+   6. LARGE SMARTPHONES & PHABLETS (481px – 680px)
+   ========================================================================== */
+@media (max-width: 680px) {
+  .features-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .feature-item {
+    border-right: 1px solid rgba(194, 154, 102, 0.2);
+    border-bottom: 1px solid rgba(194, 154, 102, 0.2);
+    padding: 0.85rem 0.65rem;
+  }
+
+  .feature-item:nth-child(2),
+  .feature-item:nth-child(4) {
+    border-right: none;
+  }
+
+  .feature-item:nth-child(3),
+  .feature-item:nth-child(4) {
+    border-bottom: none;
+  }
+
+  .featured-products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+    width: 100%;
+    align-items: start;
+  }
+
+  .special-offer-card {
+    width: 100%;
+    max-width: 440px;
+    margin: 1.5rem auto 0;
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 1.35rem 1.15rem;
+    gap: 0.85rem;
+  }
+
+  .special-offer-card .offer-content-col {
+    align-items: center;
+  }
+
+  .special-offer-card .offer-image-box {
+    height: 135px;
+    min-height: 135px;
+    width: 100%;
+    order: -1;
+  }
+
+  .highlights-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .highlights-grid .highlight-card:last-child {
+    grid-column: span 1;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+  }
+
+  .menu-items-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .quick-form-row {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+
+  .form-row-2 {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .contact-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* ==========================================================================
+   7. STANDARD SMARTPHONES (360px – 480px)
+   Matches the Mobile Phone Mockup in the Reference Image
+   ========================================================================== */
+@media (max-width: 480px) {
+  :root {
+    --nav-height: 68px;
+  }
+
+  .container {
+    padding: 0 1rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Mobile Header */
+  .site-header {
+    height: var(--nav-height);
+    width: 100%;
+  }
+
+  .site-header.scrolled {
+    height: 62px;
+  }
+
+  .header-container {
+    width: 100%;
+    padding: 0;
+  }
+
+  .brand-logo img {
+    height: 38px;
+    max-width: 135px;
+  }
+
+  .btn-order-header {
+    padding: 0.45rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .btn-order-header span.order-text {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    width: 28px;
+    height: 20px;
+    padding: 0;
+  }
+
+  /* Mobile Hero Section */
+  .hero-section {
+    padding-top: calc(var(--nav-height) + 1.25rem);
+    padding-bottom: 2.75rem;
+    width: 100%;
+  }
+
+  .hero-container {
+    gap: 1.75rem;
+    width: 100%;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 7.5vw, 2.6rem);
+    margin-bottom: 0.85rem;
+    line-height: 1.15;
+  }
+
+  .hero-description {
+    font-size: 0.925rem;
+    margin-bottom: 1.6rem;
+    line-height: 1.55;
+    width: 100%;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.925rem;
+  }
+
+  .hero-image-wrapper {
+    max-width: 100%;
+    width: 100%;
+    border-radius: var(--radius-lg);
+  }
+
+  .hero-image {
+    height: clamp(230px, 58vw, 290px);
+    width: 100%;
+  }
+
+  .hero-pagination {
+    margin-top: 1.15rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Mobile Feature Badges Strip */
+  .features-strip {
+    width: 100%;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .feature-item {
+    padding: 0.8rem 0.5rem;
+    gap: 0.45rem;
+  }
+
+  .feature-icon-wrapper {
+    width: 30px;
+    height: 30px;
+    font-size: 0.95rem;
+  }
+
+  .feature-text {
+    font-size: 0.8rem;
+  }
+
+  /* Mobile Featured Favorites */
+  .section-header {
+    margin-bottom: 1.5rem;
+    width: 100%;
+  }
+
+  .section-label {
+    font-size: 0.725rem;
+    letter-spacing: 2px;
+  }
+
+  .section-title {
+    font-size: 1.85rem;
+  }
+
+  .featured-products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+    width: 100%;
+    align-items: start;
+  }
+
+  .product-card {
+    width: 100%;
+    height: auto;
+  }
+
+  .product-card-thumb-wrap {
+    height: 110px;
+  }
+
+  .product-card-body {
+    padding: 0.65rem 0.45rem 0.75rem;
+  }
+
+  .product-card-name {
+    font-size: 0.85rem;
+    min-height: 2.4em;
+    margin-bottom: 0.15rem;
+  }
+
+  .product-card-price {
+    font-size: 0.9rem;
+    margin: 0.1rem 0 0.45rem;
+  }
+
+  .btn-card-add {
+    padding: 0.38rem 0.4rem;
+    font-size: 0.72rem;
+    width: 100%;
+  }
+
+  /* Special Offer Card */
+  .special-offer-card {
+    padding: 1.35rem 1rem;
+    border-radius: var(--radius-md);
+    width: 100%;
+    max-width: 380px;
+    margin: 1.25rem auto 0;
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 0.75rem;
+  }
+
+  .special-offer-card .offer-content-col {
+    align-items: center;
+  }
+
+  .offer-title {
+    font-size: 1.4rem;
+  }
+
+  .special-offer-card .offer-image-box {
+    margin-bottom: 0;
+    height: 125px;
+    min-height: 125px;
+    width: 100%;
+    order: -1;
+  }
+
+  .special-offer-card .offer-image-box img {
+    height: 100%;
+    width: 100%;
+  }
+
+  /* Tri-Cards on Mobile */
+  .highlights-grid {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+    width: 100%;
+  }
+
+  .highlight-card {
+    padding: 1.25rem 1rem;
+    width: 100%;
+  }
+
+  .about-card-img-wrap {
+    height: 155px;
+    width: 100%;
+  }
+
+  .testimonial-card-quote {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  /* Digital Menu Controls */
+  .menu-controls-bar {
+    padding: 1rem 0.75rem;
+    margin-top: -1.5rem;
+    border-radius: var(--radius-md);
+    width: 100%;
+  }
+
+  .menu-search-sort-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.65rem;
+    width: 100%;
+  }
+
+  .search-input-wrap {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .menu-search-input {
+    width: 100%;
+  }
+
+  .menu-sort-select {
+    width: 100%;
+  }
+
+  .menu-items-grid {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+    width: 100%;
+  }
+
+  /* Gallery Grid */
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  .gallery-item {
+    height: 165px;
+    width: 100%;
+  }
+
+  /* Lightbox Modal on Mobile */
+  .lightbox-content-box {
+    width: 95%;
+  }
+
+  .lightbox-img {
+    max-height: 60vh;
+  }
+
+  .lightbox-nav-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 0.8rem;
+  }
+
+  .lightbox-btn-prev { left: 4px; }
+  .lightbox-btn-next { right: 4px; }
+
+  .lightbox-close-btn {
+    top: -36px;
+    right: 4px;
+    font-size: 1.5rem;
+  }
+
+  /* Cart Slideout Drawer */
+  .cart-drawer {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .cart-footer {
+    padding: 1rem 1.15rem;
+    padding-bottom: max(1.25rem, env(safe-area-inset-bottom, 20px));
+  }
+
+  /* Contact & Location */
+  .contact-card {
+    padding: 1.25rem 0.85rem;
+    width: 100%;
+  }
+
+  .map-directions-bar {
+    flex-direction: column;
+    gap: 0.65rem;
+    text-align: center;
+    padding: 0.75rem;
+    width: auto;
+  }
+
+  .map-directions-bar .btn {
+    width: 100%;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    width: 100%;
+  }
+
+  .footer-social-col {
+    grid-column: span 1;
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.65rem;
+    padding-bottom: max(1.5rem, env(safe-area-inset-bottom, 20px));
+  }
+
+  /* Floating Buttons */
+  .floating-actions {
+    bottom: max(14px, env(safe-area-inset-bottom, 14px));
+    right: 14px;
+    gap: 8px;
+  }
+
+  .floating-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .floating-btn svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* ==========================================================================
+   8. MICRO SCREENS & FOLDABLES COVER DISPLAY (280px – 359px)
+   Tested for Samsung Galaxy Z Fold Cover Display (~280px - 320px)
+   ========================================================================== */
+@media (max-width: 359px) {
+  :root {
+    --nav-height: 62px;
+  }
+
+  .container {
+    padding: 0 0.65rem !important;
+  }
+
+  .brand-logo img {
+    height: 30px;
+    max-width: 110px;
+  }
+
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .hero-description {
+    font-size: 0.85rem;
+  }
+
+  .hero-actions .btn {
+    padding: 0.65rem 0.85rem;
+    font-size: 0.825rem;
+  }
+
+  .hero-image {
+    height: 210px;
+  }
+
+  /* Single Column Product Cards on Micro Displays */
+  .featured-products-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+    align-items: start;
+  }
+
+  .product-card {
+    max-width: 260px;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .feature-item {
+    border-right: none;
+    border-bottom: 1px solid rgba(194, 154, 102, 0.2);
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .gallery-item {
+    height: 190px;
+  }
+
+  .category-tab-btn {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.78rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .reservation-card {
+    padding: 1.15rem 0.75rem;
+  }
+}
+
+/* ==========================================================================
+   9. MOBILE LANDSCAPE ORIENTATION (Short Screen Height)
+   Prevents hero clipping when phones or small tablets are turned sideways
+   ========================================================================== */
+@media (max-height: 550px) and (orientation: landscape) {
+  .hero-section {
+    min-height: auto;
+    padding-top: calc(var(--nav-height) + 1rem);
+    padding-bottom: 2.25rem;
+  }
+
+  .hero-container {
+    grid-template-columns: 1.1fr 0.9fr;
+    text-align: left;
+    gap: 1.5rem;
+    align-items: center;
+    width: 100%;
+  }
+
+  .hero-title {
+    font-size: 2.15rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .hero-description {
+    font-size: 0.875rem;
+    margin-bottom: 1.15rem;
+  }
+
+  .hero-actions {
+    justify-content: flex-start;
+    flex-direction: row;
+    margin-bottom: 0.85rem;
+  }
+
+  .hero-actions .btn {
+    width: auto;
+    padding: 0.55rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .hero-image {
+    height: 220px;
+  }
+
+  .main-nav {
+    overflow-y: auto;
+    padding-bottom: 2.5rem;
+  }
+}
+
+/* ==========================================================================
+   10. TOUCH ERGONOMICS & POINTER ADAPTATION
+   ========================================================================== */
+@media (hover: none) and (pointer: coarse) {
+  .btn,
+  .nav-link,
+  .category-tab-btn,
+  .cart-close-btn,
+  .stepper-btn,
+  .mobile-menu-toggle {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .hero-dot {
+    width: 14px;
+    height: 14px;
+  }
+
+  .hero-dot.active {
+    width: 32px;
+  }
+
+  .btn:hover {
+    transform: none;
+  }
+
+  .btn:active {
+    transform: scale(0.97);
+  }
+
+  .product-card:hover {
+    transform: none;
+  }
+
+  .product-card:active {
+    transform: scale(0.99);
+  }
+}
+
+/* ==========================================================================
+   11. PRINT STYLESHEET
+   ========================================================================== */
+@media print {
+  .site-header,
+  .floating-actions,
+  .cart-drawer-overlay,
+  .mobile-menu-toggle,
+  .btn-order-header,
+  .btn-card-add,
+  .footer-bottom-bar {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+  }
+
+  .hero-section {
+    min-height: auto;
+    padding: 2rem 0;
+    background: transparent;
+    color: #000;
+  }
+
+  .hero-title, .hero-title .title-accent {
+    color: #000 !important;
+  }
+
+  .product-card, .menu-card {
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+    break-inside: avoid;
+  }
+}

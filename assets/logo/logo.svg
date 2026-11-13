@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" width="280" height="80" fill="none">
+  <!-- Coffee Cup Icon -->
+  <g transform="translate(10, 10)">
+    <!-- Saucer -->
+    <path d="M6 46 C6 49, 44 49, 44 46 C44 43, 6 43, 6 46 Z" fill="#C29A66"/>
+    <!-- Cup Body -->
+    <path d="M10 22 H40 C40 38, 35 44, 25 44 C15 44, 10 38, 10 22 Z" fill="#C29A66"/>
+    <!-- Cup Inner / Coffee surface -->
+    <ellipse cx="25" cy="22" rx="15" ry="3.5" fill="#38251C" stroke="#C29A66" stroke-width="1.5"/>
+    <ellipse cx="25" cy="22" rx="10" ry="2" fill="#C29A66" opacity="0.6"/>
+    <!-- Handle -->
+    <path d="M40 26 C46 26, 47 36, 40 37" stroke="#C29A66" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <!-- Steam / Aroma swirls -->
+    <path d="M19 16 C17 11, 23 8, 20 2" stroke="#C29A66" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.85"/>
+    <path d="M26 15 C24 9, 30 6, 28 0" stroke="#C29A66" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+    <path d="M33 16 C31 11, 37 8, 35 3" stroke="#C29A66" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.85"/>
+    <!-- Subtle coffee leaf accent -->
+    <path d="M43 14 C48 11, 51 6, 49 3 C44 4, 42 9, 43 14 Z" fill="#C29A66" opacity="0.75"/>
+  </g>
+  
+  <!-- Brand Typography -->
+  <text x="75" y="42" font-family="'Playfair Display', Georgia, serif" font-size="34" font-weight="700" fill="#F6F0E7" letter-spacing="0.5">Aurelia</text>
+  <text x="77" y="58" font-family="'DM Sans', 'Segoe UI', sans-serif" font-size="12" font-weight="600" fill="#C29A66" letter-spacing="4.5">CAFÉ</text>
+</svg>
+
