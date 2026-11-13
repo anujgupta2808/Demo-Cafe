@@ -5,14 +5,14 @@
  * computes subtotals and taxes, and formats click-to-chat WhatsApp orders.
  */
 
-const AureliaCart = (() => {
+const DemoCart = (() => {
   const STORAGE_KEY = "demo_cafe_cart";
   const CUSTOMER_KEY = "demo_customer_draft";
 
   // Helper to retrieve cart items from localStorage
   const getCart = () => {
     try {
-      const stored = localStorage.getItem(STORAGE_KEY) || localStorage.getItem("aurelia_cart");
+      const stored = localStorage.getItem(STORAGE_KEY);
       return stored ? JSON.parse(stored) : [];
     } catch (e) {
       console.warn("Could not read cart from localStorage:", e);
@@ -139,7 +139,7 @@ const AureliaCart = (() => {
             <div class="cart-empty-icon">☕</div>
             <h3 class="cart-empty-title">Your Cart is Empty</h3>
             <p>Explore our handcrafted coffee, artisanal bakes and savory bites to begin your order.</p>
-            <a href="menu.html" class="btn btn-primary" style="margin-top: 1.5rem;" onclick="AureliaCart.closeDrawer()">
+            <a href="menu.html" class="btn btn-primary" style="margin-top: 1.5rem;" onclick="DemoCart.closeDrawer()">
               Explore Menu
             </a>
           </div>
@@ -157,11 +157,11 @@ const AureliaCart = (() => {
               <div class="cart-item-price">${currency}${item.price} each</div>
               <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 0.4rem;">
                 <div class="quantity-stepper">
-                  <button type="button" class="stepper-btn" onclick="AureliaCart.updateQuantity('${item.id}', ${item.quantity - 1})">-</button>
+                  <button type="button" class="stepper-btn" onclick="DemoCart.updateQuantity('${item.id}', ${item.quantity - 1})">-</button>
                   <span class="stepper-value">${item.quantity}</span>
-                  <button type="button" class="stepper-btn" onclick="AureliaCart.updateQuantity('${item.id}', ${item.quantity + 1})">+</button>
+                  <button type="button" class="stepper-btn" onclick="DemoCart.updateQuantity('${item.id}', ${item.quantity + 1})">+</button>
                 </div>
-                <button type="button" class="cart-item-remove" onclick="AureliaCart.removeItem('${item.id}')" title="Remove item">
+                <button type="button" class="cart-item-remove" onclick="DemoCart.removeItem('${item.id}')" title="Remove item">
                   ✕ Remove
                 </button>
               </div>
@@ -334,12 +334,10 @@ const AureliaCart = (() => {
   };
 })();
 
-const DemoCart = AureliaCart;
 if (typeof window !== "undefined") {
-  window.DemoCart = AureliaCart;
-  window.AureliaCart = AureliaCart;
+  window.DemoCart = DemoCart;
 }
 
 // Auto-initialize when DOM is ready
-document.addEventListener("DOMContentLoaded", AureliaCart.init);
+document.addEventListener("DOMContentLoaded", DemoCart.init);
 

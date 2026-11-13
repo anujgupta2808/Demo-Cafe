@@ -5,7 +5,7 @@
  * and seamless integration with the shopping cart.
  */
 
-const AureliaMenu = (() => {
+const DemoMenu = (() => {
   let activeCategory = "all";
   let searchQuery = "";
   let currentSort = "featured";
@@ -40,7 +40,7 @@ const AureliaMenu = (() => {
         <div class="product-card-body">
           <h4 class="product-card-name">${item.name}</h4>
           <div class="product-card-price">${currency}${item.price}</div>
-          <button type="button" class="btn-card-add" onclick="AureliaCart.addItem('${item.id}', 1)">
+          <button type="button" class="btn-card-add" onclick="DemoCart.addItem('${item.id}', 1)">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M12 5v14M5 12h14"/>
             </svg>
@@ -99,7 +99,7 @@ const AureliaMenu = (() => {
           <div style="font-size: 3rem; margin-bottom: 1rem;">🔍</div>
           <h3 style="font-family: var(--font-heading); font-size: 1.5rem; color: #21150F; margin-bottom: 0.5rem;">No items found</h3>
           <p>We couldn't find anything matching "${searchQuery}". Try a different category or search term.</p>
-          <button type="button" class="btn btn-primary" style="margin-top: 1.5rem;" onclick="AureliaMenu.resetFilters()">
+          <button type="button" class="btn btn-primary" style="margin-top: 1.5rem;" onclick="DemoMenu.resetFilters()">
             Reset All Filters
           </button>
         </div>
@@ -125,13 +125,13 @@ const AureliaMenu = (() => {
           </div>
           <p class="menu-card-desc">${item.description}</p>
           <div class="menu-card-footer">
-            <button type="button" class="btn-card-add" onclick="AureliaCart.addItem('${item.id}', 1)" style="flex-grow: 1;">
+            <button type="button" class="btn-card-add" onclick="DemoCart.addItem('${item.id}', 1)" style="flex-grow: 1;">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M12 5v14M5 12h14"/>
               </svg>
               Add to Cart
             </button>
-            <button type="button" class="btn btn-secondary btn-sm" onclick="AureliaMenu.showProductModal('${item.id}')" title="View Details">
+            <button type="button" class="btn btn-secondary btn-sm" onclick="DemoMenu.showProductModal('${item.id}')" title="View Details">
               Details
             </button>
           </div>
@@ -177,7 +177,7 @@ const AureliaMenu = (() => {
           </div>
           <p style="color: #6B5E55; line-height: 1.6; font-size: 0.95rem; margin-bottom: 1.5rem;">${item.description}</p>
           <div style="display: flex; gap: 1rem;">
-            <button type="button" class="btn btn-primary" style="flex-grow: 1;" onclick="AureliaCart.addItem('${item.id}', 1); document.getElementById('productDetailsModal').classList.remove('active');">
+            <button type="button" class="btn btn-primary" style="flex-grow: 1;" onclick="DemoCart.addItem('${item.id}', 1); document.getElementById('productDetailsModal').classList.remove('active');">
               Add to Cart — ${currency}${item.price}
             </button>
           </div>
@@ -284,11 +284,9 @@ const AureliaMenu = (() => {
   };
 })();
 
-const DemoMenu = AureliaMenu;
 if (typeof window !== "undefined") {
-  window.DemoMenu = AureliaMenu;
-  window.AureliaMenu = AureliaMenu;
+  window.DemoMenu = DemoMenu;
 }
 
-document.addEventListener("DOMContentLoaded", AureliaMenu.init);
+document.addEventListener("DOMContentLoaded", DemoMenu.init);
 

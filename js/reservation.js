@@ -5,7 +5,7 @@
  * and formats Click-to-Chat WhatsApp reservation requests.
  */
 
-const AureliaReservation = (() => {
+const DemoReservation = (() => {
   // Format today's date as YYYY-MM-DD
   const getTodayDateString = () => {
     const today = new Date();
@@ -174,10 +174,8 @@ const AureliaReservation = (() => {
   };
 })();
 
-const DemoReservation = AureliaReservation;
 if (typeof window !== "undefined") {
-  window.DemoReservation = AureliaReservation;
-  window.AureliaReservation = AureliaReservation;
+  window.DemoReservation = DemoReservation;
 }
 
-document.addEventListener("DOMContentLoaded", AureliaReservation.init);
+document.addEventListener("DOMContentLoaded", DemoReservation.init);
